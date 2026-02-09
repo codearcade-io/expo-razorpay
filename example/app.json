@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "RazorpayExpo Example",
-    "slug": "razorpay-expo-example",
+    "slug": "@codearcade/expo-razorpay-example",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",

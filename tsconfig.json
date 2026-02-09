@@ -2,7 +2,7 @@
   "compilerOptions": {
     "rootDir": ".",
     "paths": {
-      "razorpay-expo": ["./src/index"]
+      "@codearcade/expo-razorpay": ["./src/index"]
     },
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,

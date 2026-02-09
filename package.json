@@ -1,6 +1,6 @@
 {
-  "name": "razorpay-expo",
-  "version": "0.1.0",
+  "name": "@codearcade/expo-razorpay",
+  "version": "1.0.0",
   "description": "A modern Razorpay SDK for Expo & React Native. WebView-based, production-ready, and actively maintained — built as a community replacement for the outdated official SDK.",
   "main": "./lib/module/index.js",
   "types": "./lib/typescript/src/index.d.ts",
@@ -15,6 +15,7 @@
   "files": [
     "src",
     "lib",
+    "docs",
     "android",
     "ios",
     "cpp",
@@ -32,7 +33,7 @@
     "!**/.*"
   ],
   "scripts": {
-    "example": "yarn workspace razorpay-expo-example",
+    "example": "yarn workspace @codearcade/expo-razorpay-example",
     "clean": "del-cli lib",
     "prepare": "bob build",
     "typecheck": "tsc",
@@ -41,20 +42,25 @@
     "lint": "eslint \"**/*.{js,ts,tsx}\""
   },
   "keywords": [
+    "razorpay",
     "react-native",
-    "ios",
-    "android"
+    "expo",
+    "payment",
+    "checkout",
+    "expo-razorpay",
+    "react-native-razorpay",
+    "@codearcade/expo-razorpay"
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/meabhisingh/razorpay-expo.git"
+    "url": "git+https://github.com/codearcade-io/expo-razorpay.git"
   },
-  "author": "Abhishek Singh <official.6packprogrammer@gmail.com> (https://github.com/meabhisingh)",
+  "author": "Code Arcade <support@codearcade.io> (https://github.com/codearcade-io)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/meabhisingh/razorpay-expo/issues"
+    "url": "https://github.com/codearcade-io/expo-razorpay/issues"
   },
-  "homepage": "https://github.com/meabhisingh/razorpay-expo#readme",
+  "homepage": "https://github.com/codearcade-io/expo-razorpay#readme",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
@@ -79,14 +85,17 @@
     "react": "19.1.0",
     "react-native": "0.81.5",
     "react-native-builder-bob": "^0.40.13",
+    "react-native-webview": "^13.16.0",
     "release-it": "^19.0.4",
     "typescript": "^5.9.2"
   },
   "peerDependencies": {
     "react": "*",
-    "react-native": "*"
+    "react-native": "*",
+    "react-native-webview": "*"
   },
   "workspaces": [
+    ".",
     "example"
   ],
   "packageManager": "yarn@4.11.0",

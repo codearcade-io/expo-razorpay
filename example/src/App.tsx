@@ -1,12 +1,25 @@
-import { Text, View, StyleSheet } from 'react-native';
-import { multiply } from 'razorpay-expo';
-
-const result = multiply(3, 7);
+import { useRazorpay } from '@codearcade/expo-razorpay';
+import { Button, StyleSheet, View } from 'react-native';
 
 export default function App() {
+  const { openCheckout, RazorpayUI } = useRazorpay();
+
+  const handlePress = () => {
+    openCheckout(
+      { key: '', order_id: '', currency: 'INR', name: 'App', amount: 200 },
+      {
+        onSuccess: () => {},
+        onFailure: () => {},
+        onClose: () => {},
+      }
+    );
+  };
+
   return (
     <View style={styles.container}>
-      <Text>Result: {result}</Text>
+      <Button onPress={handlePress} title="Pay" />
+
+      {RazorpayUI}
     </View>
   );
 }
