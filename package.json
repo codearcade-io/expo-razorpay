@@ -1,6 +1,6 @@
 {
   "name": "@codearcade/expo-razorpay",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "description": "A modern Razorpay SDK for Expo & React Native. WebView-based, production-ready, and actively maintained — built as a community replacement for the outdated official SDK.",
   "main": "./lib/module/index.js",
   "types": "./lib/typescript/src/index.d.ts",
@@ -63,6 +63,9 @@
   "homepage": "https://github.com/codearcade-io/expo-razorpay#readme",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
+  },
+  "npm": {
+    "access": "public"
   },
   "devDependencies": {
     "@commitlint/config-conventional": "^19.8.1",
