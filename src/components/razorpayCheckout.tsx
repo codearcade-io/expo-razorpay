@@ -11,6 +11,7 @@ import type {
   RazorpayOptions,
   RazorpaySuccessResponse,
 } from '../types';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 interface RazorpayCheckoutProps {
   options: RazorpayOptions; // The exact options object you listed in your prompt
@@ -119,30 +120,35 @@ const RazorpayCheckout = ({
       onRequestClose={onClose}
     >
       <View style={styles.overlay}>
-        <WebView
-          originWhitelist={[
-            '*',
-            'http://*',
-            'https://*',
-            'upi://*',
-            'tez://*',
-            'phonepe://*',
-          ]}
-          source={{ html: htmlContent }}
-          onMessage={handleMessage}
-          onShouldStartLoadWithRequest={handleNavigation}
-          javaScriptEnabled={true}
-          style={styles.webview}
-          startInLoadingState={true}
-          renderLoading={() => (
-            <View style={styles.loaderContainer}>
-              <ActivityIndicator
-                size="large"
-                color={options.theme?.color || '#3399cc'}
-              />
-            </View>
-          )}
-        />
+        <SafeAreaView
+          style={styles.safeContainer}
+          edges={['bottom', 'left', 'right']}
+        >
+          <WebView
+            originWhitelist={[
+              '*',
+              'http://*',
+              'https://*',
+              'upi://*',
+              'tez://*',
+              'phonepe://*',
+            ]}
+            source={{ html: htmlContent }}
+            onMessage={handleMessage}
+            onShouldStartLoadWithRequest={handleNavigation}
+            javaScriptEnabled={true}
+            style={styles.webview}
+            startInLoadingState={true}
+            renderLoading={() => (
+              <View style={styles.loaderContainer}>
+                <ActivityIndicator
+                  size="large"
+                  color={options.theme?.color || '#3399cc'}
+                />
+              </View>
+            )}
+          />
+        </SafeAreaView>
       </View>
     </Modal>
   );
@@ -153,6 +159,9 @@ const styles = StyleSheet.create({
     ...StyleSheet.absoluteFillObject,
     zIndex: 1000,
     backgroundColor: 'rgba(0,0,0,0.5)',
+  },
+  safeContainer: {
+    flex: 1,
   },
   webview: {
     flex: 1,
